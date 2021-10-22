@@ -1,47 +1,54 @@
 <div class="mt-5">
   <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prénom</th>
-      <th>Surnom</th>
-      <th>Email</th>
-      <th>Adresse</th>
-      <th>Code Postal</th>
-      <th>Ville</th>
-    </tr>
-    </thead>
     <tbody>
     <tr>
+      <th>Nom</th>
       <td>
         {{theUser?.lastname}}
       </td>
+    </tr>
+    <tr>
+      <th>Prénom</th>
       <td>
         {{theUser?.firstname}}
       </td>
+    </tr>
+    <tr>
+      <th>Surnom</th>
       <td>
         {{theUser?.nickname}}
       </td>
+    </tr>
+    <tr>
+      <th>Email</th>
       <td>
         {{theUser?.email}}
       </td>
+    </tr>
+    <tr>
+      <th>Adresse</th>
       <td>
         {{theUser?.address}}
       </td>
+    </tr>
+    <tr>
+      <th>Code Postal</th>
       <td>
         {{theUser?.postalCode}}
       </td>
+    </tr>
+    <tr>
+      <th>Ville</th>
       <td>
         {{theUser?.city}}
-      </td>
-      <td>
-        <button class="btn btn-warning" (click)="isOnModifyAccount=true">Modifier</button>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
-
+<div>
+  <button class="btn btn-warning" (click)="isOnModifyAccount=true">Modifier</button>
+</div>
 <div>
   <a class="btn btn-success" routerLink="/userIndex">Voir l'index utilisateur</a>
 </div>

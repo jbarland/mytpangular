@@ -18,6 +18,7 @@ import { FormUserComponent } from './form-user/form-user.component';
 import { UserIndexComponent } from './user-index/user-index.component';
 import {FormsModule} from "@angular/forms";
 import { UserAccountComponent } from './user-account/user-account.component';
+import { CardsGameComponent } from './cards-game/cards-game.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserAccountComponent } from './user-account/user-account.component';
     HeroCardComponent,
     FormUserComponent,
     UserIndexComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    CardsGameComponent
   ],
   imports: [
     BrowserModule,

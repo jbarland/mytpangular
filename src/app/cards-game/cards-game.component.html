@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="d-flex flex-wrap">
+
+    <div class="col-1 m-2" *ngFor="let card of myCardsService.cardsGame">
+      <img  [src]="card._imagePath" alt="{{card._name}}">
+      <p>{{card._name}}</p>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-dark mb-5" (click)="myCardsService.shuffle()">Mélanger</button>
+
+

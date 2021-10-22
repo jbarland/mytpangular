@@ -13,6 +13,7 @@ import {BattlegroundComponent} from "./battleground/battleground.component";
 import {UserIndexComponent} from "./user-index/user-index.component";
 import {FormUserComponent} from "./form-user/form-user.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
+import {CardsGameComponent} from "./cards-game/cards-game.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: "userIndex", component: UserIndexComponent},
   { path: "formUser", component: FormUserComponent},
   { path: "user/:mail", component: UserAccountComponent },
+  { path: "cardsGame", component: CardsGameComponent},
 ];
 
 @NgModule({
