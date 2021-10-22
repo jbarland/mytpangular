@@ -1,0 +1,33 @@
+.center {
+  text-align: center;
+}
+
+ button {
+     background-color: black;
+     color: white;
+     border: 4px solid white;
+     border-radius: 2px;
+     font-size: 22px;
+     padding: 5px;
+ }
+
+.col-20 {
+  width: 20%;
+}
+.global-container {
+  display: flex;
+  justify-content: center;
+}
+.container-compteur {
+  background-color: rgb(211, 209, 209);
+  //padding: 22px;
+  display: flex;
+  //flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compteurcl {
+  font-size: 34px;
+  font-weight: bold;
+}

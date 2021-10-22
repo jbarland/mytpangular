@@ -1,0 +1,25 @@
+<div>
+  <p>
+    Dé : <img [src]="uniqueDice.image">
+  </p>
+
+  <button class="btn btn-dark" (click)="rerollDice()">Relancer le dé</button>
+</div>
+
+<div>
+  <p>
+    Lancer :
+  </p>
+  <img *ngFor="let mydice of yahtzee.myThrow" [src]="mydice.image" [alt]="mydice.value" (click)="mydice.isSelected = !mydice.isSelected" [class.isActive]="mydice.isSelected">
+  <div>
+    <p>
+      {{yahtzee.calculPointMap()}}
+    </p>
+  </div>
+</div>
+
+<div>
+  <button class="btn btn-dark" [hidden]="yahtzee.myThrow.length != 0" (click)="yahtzee.throwDices()">1er lancer</button>
+  <button class="btn btn-dark" [hidden]="yahtzee.myThrow.length == 0" (click)="rerollDices()">Relancer tous les dés</button>
+  <button class="btn btn-success" [hidden]="yahtzee.myThrow.length == 0" (click)="yahtzee.rerollSelected()">Relancer selectionnés</button>
+</div>

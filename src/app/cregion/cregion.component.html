@@ -1,0 +1,30 @@
+<div><span>Regions</span></div>
+
+<h1 class="center">regions</h1>
+
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nom région</th>
+      <th>Code région</th>
+      <th>Depts</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let region of myRegionService.myArrayRegion">
+      <td>
+        {{region.name}}
+      </td>
+      <td>
+        {{region.code}}
+      </td>
+      <td>
+        <a class="btn btn-success" routerLink="/angular/regions/{{region.code}}/departments">Depts</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

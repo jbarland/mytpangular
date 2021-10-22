@@ -1,0 +1,133 @@
+<div class="mt-4 mb-4">
+  <a [hidden]="isOnModifyForm" class="btn btn-success" routerLink="/userIndex">Voir l'index utilisateur</a>
+</div>
+
+<form (ngSubmit)="onSubmit()" #formUser="ngForm">
+
+  <input  [(ngModel)]="user.firstname"
+          name="firstname"
+          #inputUserFirstname="ngModel"
+          [class.is-invalid]="inputUserFirstname.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Prénom"
+          pattern="^([A-Za-z-]+)+$"
+  >
+  <div *ngIf="inputUserFirstname.invalid && (inputUserFirstname.dirty)"
+       class="alert-danger"
+  >
+    <div *ngIf="inputUserFirstname.errors?.pattern">
+      Ce n'est pas un prénom valide
+    </div>
+  </div>
+
+  <input  [(ngModel)]="user.lastname"
+          name="lastname"
+          #inputUserLastname="ngModel"
+          [class.is-invalid]="inputUserLastname.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Nom"
+          pattern="^([A-Za-z-]+)+$"
+  >
+
+  <div *ngIf="inputUserLastname.invalid && (inputUserLastname.dirty)"
+       class="alert-danger"
+  >
+    <div *ngIf="inputUserLastname.errors?.pattern">
+      Ce n'est pas un nom valide
+    </div>
+  </div>
+
+  <!-- [class.is-invalid]="inputUserName.touched && inputUserName.invalid" -->
+  <!-- On applique la classe is-invalid si le champ a été cliqué au moins une fois et qu'il est toujours invalide -->
+  <input  [(ngModel)]="user.nickname"
+          name="nickname"
+          #inputUserNickname="ngModel"
+          [class.is-invalid]="inputUserNickname.touched && inputUserNickname.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Pseudo"
+          required
+          minlength="{{minLength}}"
+  >
+  <div *ngIf="inputUserNickname.invalid && (inputUserNickname.dirty || inputUserNickname.touched)"
+       class="alert-danger"
+  >
+    <div *ngIf="inputUserNickname.errors?.required">
+      Le nickname est requis
+    </div>
+    <div *ngIf="inputUserNickname.errors?.minlength">
+      Le nickname doit faire au moins {{minLength}} caractères
+    </div>
+  </div>
+
+  <input  [(ngModel)]="user.email"
+          name="email"
+          #inputUserEmail="ngModel"
+          [class.is-invalid]="inputUserEmail.touched && inputUserEmail.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Email"
+          required
+          pattern=".+@[\w\W]*"
+  >
+  <div *ngIf="inputUserEmail.invalid && (inputUserEmail.dirty || inputUserEmail.touched)"
+       class="alert-danger"
+  >
+    <div *ngIf="inputUserEmail.errors?.required">
+      L'email est requis
+    </div>
+    <div *ngIf="inputUserEmail.errors?.pattern">
+      Ce n'est pas un email valide
+    </div>
+  </div>
+
+  <input  [(ngModel)]="user.address"
+          name="adresse"
+          #inputUserAddress="ngModel"
+          [class.is-invalid]="inputUserAddress.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Adresse"
+  >
+
+  <input  [(ngModel)]="user.postalCode"
+          name="code postal"
+          #inputPostalCode="ngModel"
+          [class.is-invalid]="inputPostalCode.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Code postal"
+          pattern="^([0-9]+)+$"
+          minlength="5"
+          maxlength="5"
+  >
+
+  <div *ngIf="inputPostalCode.invalid && (inputPostalCode.dirty)"
+       class="alert-danger"
+  >
+    <div *ngIf="inputPostalCode.errors?.pattern">
+      Ce n'est pas un code postal valide
+    </div>
+    <div *ngIf="inputPostalCode.errors?.minlength">
+      Le code postal doit comporter 5 chiffres
+    </div>
+  </div>
+
+  <input  [(ngModel)]="user.city"
+          name="ville"
+          #inputPostalCode="ngModel"
+          [class.is-invalid]="inputPostalCode.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Ville"
+  >
+
+  <button class="btn btn-primary mt-5" type="submit" [disabled]="formUser.invalid">
+    <span [hidden]="isOnModifyForm">Créer User</span>
+    <span [hidden]="!isOnModifyForm">Valider modification</span>
+  </button>
+</form>
+
+

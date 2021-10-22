@@ -1,0 +1,30 @@
+<h1 class="center">Index utilisateur</h1>
+
+
+<div class="mt-5 mb-5">
+  <a class="btn btn-success" routerLink="/formUser">Ajouter un utilisateur</a>
+</div>
+
+<div class="row">
+  <div class="offset-3 col-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Surnom</th>
+        <th>Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr (click)="routerLinkAccount(user.email)" *ngFor="let user of myUserService.getArrayUser()">
+        <td>
+          {{user.nickname}}
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

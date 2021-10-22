@@ -1,0 +1,33 @@
+<div><span><a routerLink="/angular/regions">Toutes les régions</a></span>-><span>Depts de la région {{myName}}</span></div>
+
+<h1 class="center">departement de la region {{myName}}</h1>
+
+<table class="table table-striped" *ngIf="filteredDepts.length > 0; else noDepts">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Code Dpts</th>
+    <th>Région</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let depts of filteredDepts">
+    <td>
+      {{depts.name}}
+    </td>
+    <td>
+      {{depts.code}}
+    </td>
+    <td>
+      {{myName}}
+    </td>
+    <td>
+      <a class="btn btn-success" routerLink="/angular/regions/{{myCodeR}}/departments/{{depts.code}}/villes">Villes</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #noDepts>
+  <p>Pas de départements dans cette région</p>
+</ng-template>

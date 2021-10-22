@@ -1,0 +1,12 @@
+<div>
+  <div><h2 class="center">compteur</h2></div>
+
+  <div class="container-compteur">
+    <div class="col-20" ><button (click)="changeCompteur(-5)">--</button></div>
+    <div class="col-20"><button (click)="changeCompteur(-1)">-</button></div>
+    <div class="col-20"><p class="compteurcl" [style.background]="compteurColor">{{compteur}}</p></div>
+    <div class="col-20"><button (click)="changeCompteur(1)">+</button></div>
+    <div class="col-20"><button (click)="changeCompteur(5)">++</button></div>
+  </div>
+  <div class="center"><button  (click)="reset()">RESET</button></div>
+</div>

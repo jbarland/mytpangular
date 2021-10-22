@@ -1,0 +1,22 @@
+<h1 class="center">{{title}}</h1>
+
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom élève</th>
+      <th>Moyenne</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of arrayStudents">
+      <td>
+        {{student.name}}
+      </td>
+      <td>
+        {{calcMoyenne(student.grades)}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

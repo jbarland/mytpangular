@@ -1,0 +1,41 @@
+<div><span><a routerLink="/angular/regions">Toutes les régions</a></span>-><span><a routerLink="/angular/regions/{{myCodeRegCity}}/departments">Depts de la région {{myNameRegCity}}</a></span>-><span>Villes du dpt {{myNameD}}</span></div>
+
+<h1 class="center">Villes du département {{myNameD}}</h1>
+
+<table class="table table-striped" *ngIf="filteredCity.length > 0; else noCities">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Code Ville</th>
+    <th>Depts</th>
+    <th>Codes Postaux</th>
+    <th>Population</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let city of filteredCity">
+    <td>
+      {{city.name}}
+    </td>
+    <td>
+      {{city.code}}
+    </td>
+    <td>
+      {{myNameD}}
+    </td>
+<!--    <td>-->
+<!--      {{city.postalCode}}-->
+<!--    </td>-->
+    <td>
+      <span *ngFor="let cp of city.postalCode">{{cp}} </span>
+    </td>
+    <td>
+      {{city.population}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #noCities>
+  <p>Pas de villes dans ce département</p>
+</ng-template>
